@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Arma
+comment1.params=numBalas\ seguro\ numSerie
+comment1.target=Arma(int,\ boolean,\ java.lang.String)
+comment2.params=
+comment2.target=int\ getCantidadDeBalasRestantes()
+comment3.params=cambiarSeguro
+comment3.target=void\ modificarSeguro(boolean)
+comment4.params=balas
+comment4.target=void\ introducirBalas(int)
+comment5.params=numSerie
+comment5.target=void\ cambiarNumSerie(java.lang.String)
+comment6.params=
+comment6.target=void\ imprimirEstado()
+comment7.params=
+comment7.target=java.lang.String\ devolverEstado()
+numComments=8
