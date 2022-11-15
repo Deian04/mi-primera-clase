@@ -1,6 +1,6 @@
 public class Arma{
 
-    private boolean seguroDeTiro;
+    private boolean seguroTiro;
     
     private int numeroDeBalas;
     
@@ -8,40 +8,42 @@ public class Arma{
     
     public Arma(int numBalas, boolean seguro, String numSerie){
         numeroDeBalas = numBalas;
-        seguroDeTiro = seguro;
+        seguroTiro = seguro;
         numeroDeSerie = numSerie;
     }
     
-    public int getCantidadDeBalasRestantes(){
-        return numeroDeBalas;
+    public void setSeguro(){
+        if(seguroTiro == true){
+            seguroTiro = false;
+        }
+        else{
+            seguroTiro = true;
+        }
     }
     
-    public void modificarSeguro(boolean cambiarSeguro){
-        seguroDeTiro = cambiarSeguro;
+    public void setBalas(int balas){
+        numeroDeBalas += balas;
     }
     
-    public void introducirBalas(int balas){
-        numeroDeBalas = balas;
-    }
-    
-    public void cambiarNumSerie(String numSerie){
+    public void setNumSerie(String numSerie){
         numeroDeSerie = numSerie;
     }
     
     public void imprimirEstado(){
-        System.out.println("La cantidad de balas que tiene el cargador son " + numeroDeBalas);
-        if (seguroDeTiro == true){
-            System.out.println("El seguro esta puesto");
+        String seguro = null;
+        String numBalas = "al cargador le quedan " + numeroDeBalas + " balas";
+        if (seguroTiro == true){
+            seguro = "el seguro esta puesto";
         }
         else{
-            System.out.println("El seguro esta quitado");
+            seguro = "el seguro esta quitado";
         }
-        System.out.println("El numero de serie es " + numeroDeSerie);
+        System.out.println("El numero de serie es " + numeroDeSerie + " , " + seguro + " y " + numBalas);
     }
     
     public String devolverEstado(){
         String seguro = null;
-        if (seguroDeTiro == true){
+        if (seguroTiro == true){
             seguro = " el seguro esta puesto";
         }
         else{
@@ -49,6 +51,18 @@ public class Arma{
         }
         String estado = "La cantidad de balas es " + numeroDeBalas + ", el numero de serie es " + numeroDeSerie + seguro ;
         return estado;
+    }
+    
+    public int getNumBalas(){
+        return numeroDeBalas;
+    }
+    
+    public String getNumSerie(){
+        return numeroDeSerie;
+    }
+    
+    public boolean getSeguro(){
+        return seguroTiro;
     }
     
 }
